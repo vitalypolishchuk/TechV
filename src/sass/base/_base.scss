@@ -9,14 +9,17 @@
 html {
   font-size: 62.5%; // 1rem = 10px
 
-  @include respond($breakpoint: tab-port) {
-    font-size: 50%;
+  @include respond($breakpoint: tv) {
+    font-size: 100%;
+  }
+  @include respond($breakpoint: big-desktop) {
+    font-size: 75%;
   }
   @include respond($breakpoint: tab-land) {
     font-size: 56.25%;
   }
-  @include respond($breakpoint: big-desktop) {
-    font-size: 75%;
+  @include respond($breakpoint: tab-port) {
+    font-size: 50%;
   }
 }
 
