@@ -99,6 +99,47 @@ body {
   margin-bottom: 10rem !important;
 }
 
+.header {
+  height: 85vh;
+  background-image: linear-gradient(to right bottom, #070335, #050872);
+  background-size: cover;
+  background-position: top;
+  position: relative;
+  height: 85vh;
+}
+@supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+  .header {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    height: 95vh;
+  }
+}
+@media only screen and (min-resolution: 192dpi) and (min-width: 37.5em), only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em), only screen and (min-width: 125em) {
+  .header {
+    background-image: linear-gradient(to right bottom, rgba(5, 8, 114, 0.8), rgba(7, 3, 53, 0.8));
+  }
+}
+@media screen and (max-width: 37.5em) {
+  .header {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+  }
+}
+.header__logo-box {
+  position: absolute;
+  left: 4rem;
+}
+.header__logo {
+  height: 15.5rem;
+}
+.header__text-box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
 .navigation__checkbox {
   display: none;
 }
@@ -158,7 +199,7 @@ body {
   z-index: 1500;
   width: 0;
   opacity: 0;
-  transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: all 0.65s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 @media screen and (max-width: 37.5em) {
   .navigation__nav {
@@ -186,7 +227,7 @@ body {
   text-decoration: none;
   text-transform: uppercase;
   background-image: linear-gradient(120deg, transparent 0%, transparent 50%, #fff 50%);
-  background-size: 250%;
+  background-size: 220%;
   transition: all 0.4s;
 }
 .navigation__link:link span, .navigation__link:visited span {
