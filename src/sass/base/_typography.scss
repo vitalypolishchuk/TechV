@@ -44,3 +44,42 @@ body {
     }
   }
 }
+
+.heading-secondary {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: inline-block;
+  background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+  background-clip: text;
+  color: transparent;
+  letter-spacing: 0.2rem;
+  // transition: all 0.2s;
+
+  @include respond(tab-port) {
+    font-size: 3rem;
+  }
+
+  @include respond(phone) {
+    font-size: 2.5rem;
+  }
+
+  // &::after {
+  //   content: "";
+  //   display: block;
+  //   width: 0px;
+  //   height: 5px;
+  //   background-color: $color-primary-light;
+  //   position: absolute;
+  //   right: 0%;
+  //   bottom: -5px;
+  //   transition: 0.3s all;
+  // }
+
+  // &:hover {
+  //   &::after {
+  //     width: 100%;
+  //     left: 0;
+  //   }
+  // }
+}

@@ -1,0 +1,52 @@
+.box-transition {
+  border-radius: 5px;
+  // margin-top: 10px;
+  position: relative;
+  overflow-x: hidden;
+  // z-index: 1;
+  overflow: hidden;
+  // display: table;
+  padding: 5px 10px;
+  border: none;
+  transition: all 0.5s ease-out;
+  background-color: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    height: 0;
+    width: 0;
+    border: solid #000;
+    border-width: 0;
+    border-radius: 0;
+    transition: 0;
+    border-color: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+    border-radius: 5px;
+  }
+
+  &::before {
+    right: 0;
+    bottom: 0;
+  }
+  &::after {
+    left: 0;
+    top: 0;
+  }
+
+  &:hover {
+    &::before {
+      border-width: 0 0 1px 1px;
+    }
+    &::after {
+      border-width: 1px 1px 0 0;
+    }
+    &::before,
+    &::after {
+      height: 100%;
+      width: 100%;
+      transition: width 0.5s ease, height 0.5s ease 0.5s, border-top-right-radius 0.1s ease 0.4s, border-bottom-left-radius 0.1s ease 0.4s,
+        border-bottom-right-radius 0.1s ease 0.9s, border-top-left-radius 0.1s ease 0.9s;
+    }
+  }
+}

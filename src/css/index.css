@@ -1,3 +1,45 @@
+.box-transition {
+  border-radius: 5px;
+  position: relative;
+  overflow-x: hidden;
+  overflow: hidden;
+  padding: 5px 10px;
+  border: none;
+  transition: all 0.5s ease-out;
+  background-color: linear-gradient(to right, #050872, #070335);
+}
+.box-transition::before, .box-transition::after {
+  content: "";
+  position: absolute;
+  height: 0;
+  width: 0;
+  border: solid #000;
+  border-width: 0;
+  border-radius: 0;
+  transition: 0;
+  border-color: linear-gradient(to right, #050872, #070335);
+  border-radius: 5px;
+}
+.box-transition::before {
+  right: 0;
+  bottom: 0;
+}
+.box-transition::after {
+  left: 0;
+  top: 0;
+}
+.box-transition:hover::before {
+  border-width: 0 0 1px 1px;
+}
+.box-transition:hover::after {
+  border-width: 1px 1px 0 0;
+}
+.box-transition:hover::before, .box-transition:hover::after {
+  height: 100%;
+  width: 100%;
+  transition: width 0.5s ease, height 0.5s ease 0.5s, border-top-right-radius 0.1s ease 0.4s, border-bottom-left-radius 0.1s ease 0.4s, border-bottom-right-radius 0.1s ease 0.9s, border-top-left-radius 0.1s ease 0.9s;
+}
+
 @keyframes moveInLeft {
   0% {
     opacity: 0;
@@ -143,6 +185,28 @@ body {
   }
 }
 
+.heading-secondary {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: inline-block;
+  background-image: linear-gradient(to right, #050872, #070335);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  letter-spacing: 0.2rem;
+}
+@media screen and (max-width: 50.25em) {
+  .heading-secondary {
+    font-size: 3rem;
+  }
+}
+@media screen and (max-width: 37.5em) {
+  .heading-secondary {
+    font-size: 2.5rem;
+  }
+}
+
 .u-center-text {
   text-align: center;
 }
@@ -231,6 +295,65 @@ body {
 .btn--animated {
   animation: moveInBottom 0.5s ease-out 0.75s;
   animation-fill-mode: backwards;
+}
+
+.row {
+  max-width: 114rem;
+  margin: 0 auto;
+}
+.row:not(:last-child) {
+  margin-bottom: 8rem;
+}
+@media screen and (max-width: 50.25em) {
+  .row:not(:last-child) {
+    margin-bottom: 6rem;
+  }
+}
+@media screen and (max-width: 50.25em) {
+  .row {
+    max-width: 50rem;
+    padding: 0 3rem;
+  }
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.row [class^=col-] {
+  float: left;
+}
+.row [class^=col-]:not(:last-child) {
+  margin-right: 6rem;
+}
+@media screen and (max-width: 50.25em) {
+  .row [class^=col-]:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 6rem;
+  }
+}
+@media screen and (max-width: 50.25em) {
+  .row [class^=col-] {
+    width: 100% !important;
+  }
+}
+.row .col-1-of-2 {
+  width: calc((100% - 6rem) / 2);
+}
+.row .col-1-of-3 {
+  width: calc((100% - 2 * 6rem) / 3);
+}
+.row .col-2-of-3 {
+  width: calc(2 * ((100% - 2 * 6rem) / 3) + 6rem);
+}
+.row .col-1-of-4 {
+  width: calc((100% - 3 * 6rem) / 4);
+}
+.row .col-2-of-4 {
+  width: calc(2 * ((100% - 3 * 6rem) / 4) + 6rem);
+}
+.row .col-3-of-4 {
+  width: calc(3 * ((100% - 3 * 6rem) / 4) + 2 * 6rem);
 }
 
 .header {
@@ -337,12 +460,8 @@ body {
   z-index: 1500;
   width: 0;
   opacity: 0;
+  overflow: hidden;
   transition: all 0.65s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-@media screen and (max-width: 37.5em) {
-  .navigation__nav {
-    width: 100%;
-  }
 }
 .navigation__list {
   position: absolute;
