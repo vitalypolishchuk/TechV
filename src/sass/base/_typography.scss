@@ -63,23 +63,18 @@ body {
   @include respond(phone) {
     font-size: 2.5rem;
   }
+}
 
-  // &::after {
-  //   content: "";
-  //   display: block;
-  //   width: 0px;
-  //   height: 5px;
-  //   background-color: $color-primary-light;
-  //   position: absolute;
-  //   right: 0%;
-  //   bottom: -5px;
-  //   transition: 0.3s all;
-  // }
+.heading-tertiary {
+  font-size: $default-font-size;
+  font-weight: 700;
+  text-transform: uppercase;
+}
 
-  // &:hover {
-  //   &::after {
-  //     width: 100%;
-  //     left: 0;
-  //   }
-  // }
+.paragraph {
+  font-size: $default-font-size;
+
+  &:not(:last-child) {
+    margin-bottom: 3rem;
+  }
 }
