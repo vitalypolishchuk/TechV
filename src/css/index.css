@@ -324,9 +324,12 @@ body {
 }
 @media screen and (max-width: 50.25em) {
   .row {
-    max-width: 50rem;
+    max-width: 70vw;
     padding: 0 3rem;
   }
+}
+.row .composition__photo {
+  outline: 2px solid red;
 }
 .row:after {
   content: "";
