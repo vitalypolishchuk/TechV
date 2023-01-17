@@ -11,12 +11,8 @@
   }
 
   @include respond(tab-port) {
-    max-width: 70vw;
+    max-width: 80rem;
     padding: 0 3rem;
-  }
-
-  .composition__photo {
-    outline: 2px solid red;
   }
 
   @include clearfix;
