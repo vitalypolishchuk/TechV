@@ -1,6 +1,5 @@
 const composition = document.querySelector(".composition");
 const compositionPhoto = document.querySelectorAll(".composition__photo");
-console.log(compositionPhoto);
 
 composition.addEventListener("click", (e) => {
   if (!e.target.classList.contains("composition__photo")) return;
